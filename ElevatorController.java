@@ -22,11 +22,6 @@ public class ElevatorController {
             new Thread(elev).start();
         }
     }
-    /*public void start(){
-        for (Elevator elev : elevators) {
-            new Thread(elev).start();
-        }
-    }*/
     //Добавляем запрос этажа в очередь близжайшего лифта
     public void dispatchRequest(Request request) {
         Elevator bestElevator = findBestElevator(request);
