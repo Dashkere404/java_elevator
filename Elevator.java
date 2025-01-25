@@ -46,31 +46,6 @@ class Elevator implements Runnable {
             Thread.currentThread().interrupt();
         }
     }
-
-    /*private synchronized void checkForIntermediateStops() {
-        // Проверка промежуточных остановок
-        while (!tasks.isEmpty()) {
-            Request task = tasks.peek();
-            int targetFloor = task.getFloorTo();
-            if (currentFloor < targetFloor) {
-                for (int i = currentFloor + 1; i <= targetFloor; i++) {
-                    if (task.getFloorFrom() == i) {
-                        log("Лифт " + number + " заезжает на " + i + " по пути вверх");
-                        moveTo(i, targetFloor);
-                        return;
-                    }
-                }
-            } else {
-                for (int i = currentFloor - 1; i >= targetFloor; i--) {
-                    if (task.getFloorFrom() == i) {
-                        log("Лифт " + number + " заезжает на " + i + " по пути вниз");
-                        moveTo(i, targetFloor);
-                        return;
-                    }
-                }
-            }
-        }
-    }*/
     //Вывод перемещений лифта
     private void moveTo(int currentFloor, int targetFloor) {
         log("Лифт " + number +" движется с " + this.currentFloor + " на " + currentFloor);
